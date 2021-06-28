@@ -35,6 +35,9 @@ public class Main {
                 case 4: //4. 수정
                     crud.update();
                     break;
+                case 5: // 5. 모든 리스트
+                    crud.searchAll();
+                    break;
                 default://종료
                     System.out.println("프로그램을 종료합니다.");
                     System.exit(0);

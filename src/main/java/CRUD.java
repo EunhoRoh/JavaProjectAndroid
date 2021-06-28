@@ -110,7 +110,19 @@ public class CRUD {
         System.out.println("\n검색하고 싶은 " + id + "번 스케쥴의 내용입니다.");
         System.out.println(dataSchedule[id -1].toString());
     }
-    
+
+    // 모두 보여주기
+    public void searchAll() {
+        System.out.println(); //개행
+        System.out.println("모든 스케쥴 리스트입니다.");
+
+        for(int i=0; swit[i] == true; i++){
+           System.out.println(dataSchedule[i].toString());
+        }
+        System.out.println();
+    }
+
+
     //Update - 수정
     public void update() {
         System.out.println(); //개행
