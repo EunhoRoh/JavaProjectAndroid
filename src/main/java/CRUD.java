@@ -1,4 +1,11 @@
 import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CRUD {
 
@@ -22,9 +29,10 @@ public class CRUD {
             swit[i] = false;
         }
     }
-
+    long checkID;
     //Insert - 추가
     public void insert(){
+
         System.out.println();// 개행
         for(int i=0; i<dataSchedule.length; i++){
             if(swit[dataSchedule.length -1] == true){
@@ -32,13 +40,18 @@ public class CRUD {
                 return;
             } else if(swit[i] == false){
                 System.out.println((i+1) + " 번 스케쥴에 작성 하실 수 있습니다.\n");
+                checkID=i+1;
                 break;
             }
         }
-        System.out.print("ID : ");
-        long id = sc.nextLong();
-        System.out.print("등록일자 : ");
-        String regiDate = sc.next();
+        //System.out.print("ID : ");
+        //long id = sc.nextLong();
+        LocalDate date = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        long id = checkID;
+        //System.out.print("등록일자 : ");
+        String regiDate = date.format(formatter);
         System.out.print("이름 : ");
         String name =sc.next();
         System.out.print("부위 : ");
@@ -49,7 +62,7 @@ public class CRUD {
         long numOfSets = sc.nextLong();
         System.out.print("횟수 : ");
         long reps = sc.nextLong();
-        System.out.print("무게 : ");
+        System.out.print("무게(kg) : ");
         long weight = sc.nextLong();
         
         for (int i=0; i< dataSchedule.length; i++){
@@ -72,14 +85,14 @@ public class CRUD {
             System.out.println("\n작성된 스케쥴이 없는 번호입니다.");
             return;
         }
-        System.out.println("\n삭제하고 싶은 " + id + "페이지의 내용입니다.");
+        System.out.println("\n삭제하고 싶은 " + id + "스케쥴의 내용입니다.");
         System.out.println(dataSchedule[id -1].toString());
-        System.out.print("페이지를 삭제하고 싶으시면 'Y'아니면 'N'를 입력하시오\n : ");
+        System.out.print("스케쥴을 삭제하고 싶으시면 'Y'아니면 'N'를 입력하시오\n : ");
         check = sc.next();
         if (check.equals("y") || check.equals("Y")){
             swit[id -1] = false;
             dataSchedule[id -1] = null;
-            System.out.println("\n페이지가 삭제되었습니다.");
+            System.out.println("\n스케쥴이 삭제되었습니다.");
         } else{
             System.out.println("\n삭제를 취소합니다.");
             return;
@@ -113,8 +126,11 @@ public class CRUD {
         check = sc.next();
         if(check.equals("y") || check.equals("Y")){
 
-            System.out.print("등록일자 : ");
-            String regiDate = sc.next();
+            //System.out.print("등록일자 : ");
+            LocalDate date = LocalDate.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            String regiDate = date.format(formatter);
+            //String regiDate = sc.next();
             System.out.print("이름 : ");
             String name =sc.next();
             System.out.print("부위 : ");

@@ -102,6 +102,6 @@ public class DataManage {
     @Override
     public String toString() {
         return "Schedule [ID="+id+", Date="+regiDate +", Name="+name+", Part="+part
-                +", exercise="+exercise +", Sets="+numOfSets+", reps="+reps+", Weight="+weight;
+                +", exercise="+exercise +", Sets="+numOfSets+", reps="+reps+", Weight="+weight+"kg]";
     }
 }
