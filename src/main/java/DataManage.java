@@ -2,7 +2,7 @@ public class DataManage {
     private long id;
     private String name;
     private String regiDate;
-    private String split;
+    //private String split;
     private String part;
     private long numOfSets;
     private long reps;
@@ -33,13 +33,13 @@ public class DataManage {
         this.regiDate = regiDate;
     }
 
-    public String getSplit() {
+    /*public String getSplit() {
         return split;
     }
 
     public void setSplit(String split) {
         this.split = split;
-    }
+    }*/
 
     public String getPart() {
         return part;
@@ -85,9 +85,23 @@ public class DataManage {
 
     }
 
-    public DataManage(long id, String name, String regiDate, String split, String part, long numOfSets, long reps,
-            long weight, String exercise){
+    public DataManage( long id, String regiDate, String name, String part,String exercise, long numOfSets, long reps,
+            long weight){
         super();
-        this.
+        this.id = id;
+        this.name = name;
+        this. regiDate = regiDate;
+        //this.split = split;
+        this.part = part;
+        this.numOfSets = numOfSets;
+        this.reps = reps;
+        this.weight = weight;
+        this.exercise = exercise;
+    }
+
+    @Override
+    public String toString() {
+        return "Schedule [ID="+id+", Date="+regiDate +", Name="+name+", Part="+part
+                +", exercise="+exercise +", Sets="+numOfSets+", reps="+reps+", Weight="+weight;
     }
 }

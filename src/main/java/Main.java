@@ -24,12 +24,23 @@ public class Main {
             chNum = sc.nextInt();
 
             switch (chNum) {
-                case 1: // 1. 조회
-
+                case 1: // 1. 추가
+                    crud.insert();
+                    break;
+                case 2: // 2. 삭제
+                    crud.delete();
+                case 3: //3. 검색
+                    crud.search();
+                    break;
+                case 4: //4. 수정
+                    crud.update();
+                    break;
+                default://종료
+                    System.out.println("프로그램을 종료합니다.");
+                    System.exit(0);
             }
+            System.out.println();
         }
-
-
 
     }
 
