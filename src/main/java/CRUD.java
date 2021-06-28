@@ -79,6 +79,11 @@ public class CRUD {
     
     //Delete - 삭제
     public void delete(){
+        System.out.println();
+        for(int i=0; swit[i] == true; i++){
+            System.out.println(dataSchedule[i].toString());
+        }
+
         System.out.println("\n삭제하고 싶은 스케쥴의 번호를 입력하시오(1 ~ 100) : ");
         id = sc.nextInt();
         if(dataSchedule[id -1] == null){
@@ -90,7 +95,7 @@ public class CRUD {
         System.out.print("스케쥴을 삭제하고 싶으시면 'Y'아니면 'N'를 입력하시오\n : ");
         check = sc.next();
         if (check.equals("y") || check.equals("Y")){
-            swit[id -1] = false;
+            //swit[id -1] = false;
             dataSchedule[id -1] = null;
             System.out.println("\n스케쥴이 삭제되었습니다.");
         } else{
@@ -126,6 +131,10 @@ public class CRUD {
     //Update - 수정
     public void update() {
         System.out.println(); //개행
+        for(int i=0; swit[i] == true; i++){
+            System.out.println(dataSchedule[i].toString());
+        }
+        System.out.println();
         System.out.print("수정하고 싶은 스케쥴의 번호를 입력하시오(1~100) : ");
         id = sc.nextInt();
         if(dataSchedule[id-1]==null){

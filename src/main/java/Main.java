@@ -29,6 +29,7 @@ public class Main {
                     break;
                 case 2: // 2. 삭제
                     crud.delete();
+                    break;
                 case 3: //3. 검색
                     crud.search();
                     break;
