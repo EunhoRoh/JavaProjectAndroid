@@ -104,4 +104,5 @@ public class DataManage {
         return "Schedule [ID="+id+", Date="+regiDate +", Name="+name+", Part="+part
                 +", exercise="+exercise +", Sets="+numOfSets+", reps="+reps+", Weight="+weight+"kg]";
     }
+
 }
