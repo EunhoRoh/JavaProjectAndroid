@@ -1,8 +1,8 @@
-DataManage.java
- DataManage
 MenuShow.java
  MenuShow
-CRUD.java
- CRUD
+DataManage.java
+ DataManage
 Main.java
  Main
+CRUD.java
+ CRUD
